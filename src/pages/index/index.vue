@@ -8,6 +8,11 @@ function goTest() {
     a: 1
   });
 }
+
+const demo = () => {
+  console.log(123);
+
+}
 </script>
 
 <template>
@@ -18,10 +23,18 @@ function goTest() {
     </view>
     <view @click="changeTitle">changeTitle</view>
     <view @click="goTest">测试页</view>
+    <u-button @click="demo" type="primary" text="月落"></u-button>
+    <button hover-class="hover1" class="demo1">测试按钮</button>
   </view>
 </template>
 
 <style scoped lang="scss">
+.demo1 {
+  background-color: pink;
+}
+.hover1 {
+  background-color: green !important;
+}
 .content {
   display: flex;
   flex-direction: column;
