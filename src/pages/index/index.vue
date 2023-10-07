@@ -9,9 +9,35 @@ function goTest() {
   });
 }
 
-const demo = () => {
-  console.log(123);
+const options = ref([{
+  text: '综合推荐',
+  value: 1,
+  checked: true
+}, {
+  text: '新品优先',
+  value: 2
+}, {
+  text: '评论数从高到低',
+  value: 3
+}]);
+const range = ref("总和推荐");
+const rangeShow = ref(false);
+const ddmRange = ref(null);
 
+const filterTap = () => {
+  //显示下拉框
+  ddmRange.value.show()
+  rangeShow.value = true;
+};
+
+const rangeItemClick = (e) => {
+  console.log(e)
+  range.value = e.text
+  rangeClose()
+};
+
+const rangeClose = () => {
+  rangeShow.value = false;
 }
 </script>
 
@@ -24,7 +50,16 @@ const demo = () => {
     <view @click="changeTitle">changeTitle</view>
     <view @click="goTest">测试页</view>
     <u-button @click="demo" type="primary" text="月落"></u-button>
-    <button hover-class="hover1" class="demo1">测试按钮</button>
+    <fui-dropdown-menu :size="28" selectedColor="#465CFF" :options="options" @click="rangeItemClick" @close="rangeClose"
+      ref="ddmRange">
+      <view class="fui-filter__item" @tap="filterTap">
+        <text>{{ range }}</text>
+        <view class="fui-filter__icon" :class="{ 'fui-icon__ani': rangeShow }">
+          <fui-icon name="turningdown" :size="32"></fui-icon>
+        </view>
+      </view>
+    </fui-dropdown-menu>
+
   </view>
 </template>
 
