@@ -100,3 +100,11 @@
 ├── unocss.config.ts unocss配置
 └── vite.config.ts vite配置
 ```
+
+## 额外加入
+- 组件库：first-UI、uView-Plus
+- editorConfig：支持元素属性换行（需要修改格式化方式，默认使用prettier）
+- useRequest重新封装网络请求hooks
+
+- 还存在的问题：
+  - 引入uView-Plus后unocss不能使用 bg-#fff 这种颜色语法了。会引起 app.sass 报错，原因待查看
