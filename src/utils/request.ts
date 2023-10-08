@@ -84,12 +84,12 @@ function baseRequest(
 const http = {
   get: <T>(api: string, params: any) =>
     baseRequest('GET', api, {
-      ...getCommonParams(),
+      // ...getCommonParams(),
       ...params
     }) as Http.Response<T>,
   post: <T>(api: string, params: any) =>
     baseRequest('POST', api, {
-      ...getCommonParams(),
+      // ...getCommonParams(),
       ...params
     }) as Http.Response<T>
 };

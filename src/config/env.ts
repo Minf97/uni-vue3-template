@@ -2,8 +2,8 @@ const apiEnv: ApiEnv = 'dev';
 
 const envMap = {
   dev: {
-    baseUrl: 'http://m.dev.xxx.com',
-    apiBaseUrl: 'https://m.devapi.xxx.com'
+    baseUrl: 'http://127.0.0.1:80',
+    apiBaseUrl: 'http://127.0.0.1:80/api/'
   },
   beta: {
     baseUrl: 'http://m.beta.xxx.com',
@@ -13,10 +13,6 @@ const envMap = {
     baseUrl: 'https://m.xxx.com',
     apiBaseUrl: 'https://m.api.xxx.com'
   },
-  local: {
-    baseUrl: 'http://m.dev.xxx.com',
-    apiBaseUrl: 'https://m.devapi.xxx.com'
-  }
 };
 
 type ApiEnv = keyof typeof envMap;

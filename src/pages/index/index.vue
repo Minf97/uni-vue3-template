@@ -49,17 +49,6 @@ const rangeClose = () => {
     </view>
     <view @click="changeTitle">changeTitle</view>
     <view @click="goTest">测试页</view>
-    <u-button @click="demo" type="primary" text="月落"></u-button>
-    <fui-dropdown-menu :size="28" selectedColor="#465CFF" :options="options" @click="rangeItemClick" @close="rangeClose"
-      ref="ddmRange">
-      <view class="fui-filter__item" @tap="filterTap">
-        <text>{{ range }}</text>
-        <view class="fui-filter__icon" :class="{ 'fui-icon__ani': rangeShow }">
-          <fui-icon name="turningdown" :size="32"></fui-icon>
-        </view>
-      </view>
-    </fui-dropdown-menu>
-
   </view>
 </template>
 
@@ -91,5 +80,4 @@ const rangeClose = () => {
 .title {
   font-size: 36rpx;
   color: #8f8f94;
-}
-</style>
+}</style>
